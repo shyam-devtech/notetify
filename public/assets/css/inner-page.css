@@ -1,0 +1,215 @@
+
+/*--------------------------------------------------------------------------------------*/
+/*INNER PAGES CSS START
+
+
+/*--------------------------------------------------------------------------------------*/
+/*common-css
+/*--------------------------------------------------------------------------------------*/
+.btn{height:45px;line-height:45px;padding:0 10px;border-radius:4px;color:#fff;font-size:16px;text-align:center;background:#3d4cd2;font-weight:700}
+.wraper-inner.bg-banner{height:calc(100vh - 50px)}
+
+.sub-title{font-size:16px;color:#000;font-weight:700}
+.inner-title{font-size:22px;color:#000;font-weight:700}
+
+
+.bg-grey{background:#f7f7fa}
+.border-grey{background-color:#e4e4e4;opacity:1}
+.white-line{background-color:#fff}
+.purple-bg{background:rgb(61 76 210 / 66%)}
+.grey-bg{background:#e9e9eb}
+.decline-bg{border:1px solid #3d4cd2}
+.light-blue-bg {background: #EAEBF1;}
+
+
+.similar-shadow-box{background:#fff;border-radius:10px;padding:30px 30px}
+.similar-shadow-2{background:#fff;border-radius:10px;padding:20px 20px 20px}
+.similar-shadow-3{box-shadow:0 3px 12px rgb(51 48 48 / 16%);padding:20px 20px 20px;border-radius:6px}
+
+.big-btn{width:363px;margin:auto;display:block}
+.blue-border-btn:hover{color:#3d4cd2}
+.black-btn:hover{opacity:.7;color:#fff}
+.full-btn{width:100%}
+.blue-btn{background:#3d4cd2;color:#fff}
+.blue-border-btn{border:1px solid #3d4cd2;color:#000}
+.black-btn{background:#000;color:#fff}
+.s-btn{background:rgb(255 40 37 / 11%);color:#ff2825;padding:5px 12px;border-radius:26px;font-size:14px}
+.btn-green{color:#00b341;background:rgb(0 179 65 / 11%)!important}
+.m-btn {width: 159px;}
+.btn-box .mr-auto {margin-right: initial !important;margin: initial !IMPORTANT;}
+
+.space-top{padding-top:80px;padding-bottom:40px}
+.min-box{height:calc(100vh - 169px)}
+.min-btn{width:248px}
+.common-content-box{text-align:center;border-radius:10px;overflow:hidden;width:508px;margin:30px auto}
+.full-box p {width: 100%;justify-content: center;}
+
+.without-icon input {padding-left: 15px;padding-right: 15px;}
+.without-icon .placeholder{ left: 15px;}
+
+.btn i {
+    padding-right: 8px;
+    font-size: 20px;
+}
+
+.btn i {
+    padding-right: 4px;
+    font-size: 20px;
+    top: 2px;
+    position: relative;
+}
+
+.action-i i {
+    font-size: 23px;
+}
+
+/*--------------------------------------------------------------------------------------*/
+/*home-sign-in
+/*--------------------------------------------------------------------------------------*/
+
+.home-sign-in{padding-top:208px}
+.home-sign-in .container{z-index:1;position:relative}
+.home-sign-in-L{padding-right:115px}
+.home-sign-in-L h1{font-size:53px;color:#fff;font-weight:500;margin-bottom:10px}
+.home-sign-in-L p{font-size:16px;color:#fff;font-weight:500;line-height:26px}
+.home-sign-in-R .similar-shadow-box{width:422px;margin-left:auto}
+
+.home-registration{z-index:9;position:relative;padding-top:65px;padding-bottom:65px}
+.home-registration select.form-control {padding-left: 43px;}
+
+.reset-password,.link-expired,.onboarding{position:relative;overflow:hidden;height: 100%;}
+
+.form-head h2{font-size:32px;color:#000;font-weight:500}
+.form-head h5{font-size:28px;color:#000;font-weight:700}
+.form-head figure{margin-bottom:15px}
+.form-head{margin-bottom:35px}
+
+.placeholder i{font-size:24px}
+.blue-link{font-size:16px;font-weight:700;display:flex;color:#3d4cd2}
+.bottom-text{font-size:15px;color:#000;font-weight:700}
+.form-label{font-size:15px;color:#000;font-weight:500;margin-bottom:12px}
+
+.search-box{position:relative}
+.search-box input.form-control{height:45px;border-radius:33px;border:1px solid #e4e4e4;font-size:15px;font-weight:400;padding-left:45px}
+.search-box input.form-control::-webkit-input-placeholder{color:#aaa}
+.search-box input.form-control:-ms-input-placeholder{color:#aaa}
+.search-box input.form-control::placeholder{color:#aaa}
+.serch-btn{position:absolute;top:0;left:13px;bottom:0;background:0 0;border:0;font-size:25px;color:#aaa}
+
+.select-group{height:45px;border:1px solid #e4e4e4;border-radius:4px;font-size:15px;font-weight:500;display:flex;align-items:center;padding-left:15px;color:#000;padding-right:15px}
+.select-group i{font-size:24px;color:#3d4cd2}
+.select-group .checkmark{height:16px;width:16px;top:12px;left:15px}
+.select-group p{font-size:15px;font-weight:500;padding-left:30px}
+.coustom-checkbox .select-all-blue{font-size:16px;color:#3d4cd2;font-weight:700}
+
+
+.with-icon{position:relative}
+.with-icon i{position:absolute;left:0;top:0;bottom:0;margin:auto;width:54px;background:#e9e9eb;display:flex;align-items:center;justify-content:center;font-size:18px;color:#aaa;font-weight:500}
+.with-icon input{padding-left:68px}
+.value-select span{font-size:15px;color:#3d4cd2;padding-top:2px}
+
+.msge-sucess p{border:1px solid #3d4cd2;display:inline-flex;padding:10px 25px;border-radius:6px;font-size:16px;color:#000}
+.add-btn i{background:#3d4cd2;width:24px;height:24px;justify-content:center;display:flex;align-items:center;border-radius:4px;color:#fff;margin-right:10px}
+
+
+.terms-content h4{font-size:20px;color:#000;font-weight:700;padding-bottom:10px}
+.terms-content{margin-bottom:20px}
+.terms-content:last-child{margin-bottom:0}
+
+
+/*--------------------------------------------------------------------------------------*/
+/*profile
+/*--------------------------------------------------------------------------------------*/
+
+.profile-head figure img{width:102px;height:102px;border-radius:50%}
+.profile-head figcaption h4{font-size:22px;color:#000;font-weight:500;padding-bottom:10px}
+.profile-head figcaption{margin-top:10px}
+.profile-head figcaption span{font-size:15px;color:#000;font-weight:500}
+.profile-head figcaption span i{font-size:24px;color:#3d4cd2;padding-right:6px;position:relative;top:-3px}
+.profile-list li{font-size:16px;color:#000;padding:0 60px 15px;margin-bottom:15px;border-bottom:1px solid #e4e4e4;display:flex;align-items:center}
+.profile-list li:last-child{border-bottom:0 solid #e4e4e4;padding-bottom:0;margin-bottom:0}
+.profile-list li i{font-size:24px;color:#3d4cd2}
+.profile-list li i{padding-right:15px;position:relative;top:-3px}
+
+
+.campaign-report-box h4{font-size:18px;color:#000;font-weight:700;padding-bottom:10px}
+.campaign-report-info span{padding-right:50px;font-size:14px}
+.campaign-report-box p{font-size:15px}
+.campaign-report-box{margin-bottom:15px}
+
+
+.no-financial figure{margin-bottom:25px}
+.no-financial h4{font-size:20px;color:#000;font-weight:700;padding-bottom:10px}
+.no-financial p{font-size:15px;color:#000}
+
+
+
+.bank-info-list-L h4{font-size:18px;color:#000;font-weight:700;padding-bottom:10px;display:flex;align-items:center}
+.bank-info-list-L h4 i{color:#3d4cd2;font-size:24px;margin-right:3px;margin-right:10px}
+.bank-info-list-L span{font-size:21px;color:#000}
+.bank-info-list-R .delete-post i,.bank-info-list-R .edit-post i{font-size:22px}
+.bank-info-list li{margin-bottom:15px}
+.bank-info-list li:last-child{margin-bottom:0}
+
+.card-info-box-content b{display:block;font-size:15px;color:#000}
+.card-info-box-content span{color:#000}
+.card-info-box-content{margin-right:95px}
+.bank-info-list-R .delete-post,.bank-info-list-R .edit-post{width:42px;height:42px}
+
+
+.update-renewal-box h5{font-size:15px;color:#000;font-weight:500}
+.manage-admin-list-box .delete-post,.manage-admin-list-box .edit-post{width:36px;height:36px;font-size:18px}
+.manage-admin-list-L h4{font-size:16px;color:#000;padding-bottom:12px}
+.manage-admin-list li.manage-admin-list-box{margin-bottom:15px}
+.contact-info a,.contact-info span{display:flex;align-items:center; color: #000;}
+.contact-info a{margin-right:55px}
+.contact-info.d-flex i{color:#3d4cd2;font-size:22px;padding-right:10px}
+.contact-info a:hover{color:#3d4cd2!important}
+
+
+.manage-groups-list-box-L h4 {
+    font-size: 18px;
+    color: #000000;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.manage-groups-info span {
+    font-size: 15px;
+    color: #000000;
+    margin-right: 50px;
+}
+
+.blue-bg{
+    background: #3D4CD2;
+}
+
+.action-box {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.action-box img{
+
+-webkit-filter:brightness(0) invert(1);}
+
+
+.manage-groups-list .manage-groups-list-box {
+    margin-bottom: 15px;
+}
+
+
+.manage-groups-list .manage-groups-list-box:last-child{ margin-bottom: 0; }
+
+
+.member-detail-info figcaption h4 {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 5px;
+}

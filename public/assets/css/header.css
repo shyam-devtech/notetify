@@ -1,0 +1,19 @@
+header{background:#fff;position:fixed;left:0;top:0;z-index:99;width:100%;padding:17px 0;box-shadow:0 4px 12px rgb(138 138 138 / 12%)}
+.navbar{padding:0}
+.navbar-inner-box{width:100%}
+.btn-register{min-width:119px}
+.navbar-expand-lg .navbar-nav{flex-direction:column}
+.inner-header .navbar-collapse{background-color:#3d4cd2;position:fixed;top:0;right:-321px;z-index:9;width:321px;transition:.3s;padding-top:65px}
+.navbar-nav{overflow:auto;height:calc(100vh - 65px);width:100%}
+.inner-header .navbar-collapse.show{transition:.5s;right:0;margin-left:0}
+.inner-header #close{position:absolute;top:15px;right:30px;font-size:32px;color:#fff;font-weight:300}
+.inner-header .navbar-toggler-icon{display:flex;align-items:center;justify-content:center;height:42px;width:42px;background:#3d4cd2;color:#fff;border-radius:50%;font-size:24px}
+.inner-header .navbar-toggler{display:block;margin:0;padding:0;border:0}
+.inner-header .navbar-toggler:focus{box-shadow:none}
+.inner-header .notifications-btn i{font-size:25px;color:#3d4cd2}
+.inner-header .user-img img{width:42px;height:42px;border-radius:50%}
+.inner-header .nav-link{padding:10px 15px 10px 25px!important;font-size:16px;color:#fff;display:flex;align-items:center;transition:.5s}
+.inner-header .nav-link i{width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:rgb(255 255 255 / 24%);border-radius:50%;font-size:20px;font-weight:300;margin-right:15px;transition:.5s}
+.inner-header .nav-link:focus,.nav-link:hover{color:#3d4cd2;background:#fff;transition:.5s}
+.inner-header .nav-link:hover i{background:rgb(61 76 210);color:#fff;transition:.5s}
+

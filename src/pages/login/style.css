@@ -1,0 +1,27 @@
+body {
+  background: url(/public/assets/images/bg-banner.png);
+  background-attachment: fixed;
+  background-position: center center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+body:after {
+  background: rgb(0 0 0 / 37%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  content: "";
+}
+footer {
+  background: rgb(0 0 0 / 57%);
+}
+.footer-link li a {
+  color: #fff !important;
+}
+.all-right p {
+  color: #fff;
+}
