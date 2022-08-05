@@ -12,6 +12,7 @@ const Login = () => {
   let initialValues = {
     email: ' ',
     password: ' ',
+    verifyemail: ' ',
   };
 
   const [passwordType, setPasswordType] = useState("password");
@@ -46,10 +47,10 @@ const Login = () => {
   const handleValidation = (value) => {
     const errors = {};
     const regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
-    if (value.email === '') {
+    if (!value.email) {
       errors.email = "Email is required!";
-    } else if (!regex.test(value.email)) {
-      errors.email = "This is not a valid email format!";
+    } else if(!regex.test(value.email)){
+      errors.email = "Please enter a valid formate!"
     }
     if (!value.password) {
       errors.password = "Password is required!";
@@ -72,19 +73,46 @@ const Login = () => {
         email: formValues.email,
         password: formValues.password,
       };
-      makePostRequest("/schoolAdminAccess/login", data)
-        .then((res) => {
-          if (res.status === 200) {
-            console.log(res.data);
-            navigate("/home");
-          }
-        })
-        .catch((err) => {
-          console.log(err.res);
-        });
-    }
+        makePostRequest("/schoolAdminAccess/login", data)
+          .then((res) => {
+            if (res.status === 200) {
+              console.log(res.data);
+              navigate("/home");
+            }
+          })
+          .catch((err) => {
+            console.log(err.res);
+          });
+      }
     setIsValid(true);
   };
+
+  /*------------------------------*/
+  /*-------Handle Forgot Password------*/
+  /*------------------------------*/
+
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    setIsValid(setFormErrors(handleValidation(formValues)));
+  console.log(formErrors.email);
+
+    if (isValid === true) {
+      let data = {
+        email: formValues.verifyemail,
+      }
+        makePostRequest("schoolAdminAccess/forgotPassword", data)
+          .then((res) => {
+            if (res.status === 200) {
+              console.log(res.data);
+              navigate("/home");
+            }
+          })
+          .catch((err) => {
+            console.log(err.res);
+          });
+      }
+    setIsValid(true);
+  }
 
   console.log(formErrors.email);
 
@@ -154,7 +182,7 @@ const Login = () => {
                         </span>
                       </label>
                       <Link
-                      to="/login"
+                      to="#"
                         className="forget-password text-right blue-link text-end pt-2 justify-content-end"
                         data-bs-toggle="modal"
                         data-bs-target="#forget-password"
@@ -170,7 +198,7 @@ const Login = () => {
                     </div>
                     <span className="bottom-text text-center d-flex justify-content-center  align-items-center mt-4">
                       Are you new here?{" "}
-                      <Link to="/login" className="blue-link"> &nbsp;Register</Link>
+                      <Link to="/register" className="blue-link"> &nbsp;Register</Link>
                     </span>
                   </form>
                 </div>
@@ -179,6 +207,45 @@ const Login = () => {
           </div>
         </section>
       </div>
+      {/* <!-- forget-password --> */}
+      <div className="modal fade common-modal" id="forget-password" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div className="modal-dialog">
+      <div className="modal-content">
+         <div className="modal-head text-center">
+            <figure><img src="images/logo-form.png" alt="logo"/>/</figure>
+            <h5 className="modal-title" id="exampleModalLabel">Forgot Password</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="ti ti-x"></i></button>
+         </div>
+         <div className="modal-body">
+            <form onSubmit={handleForgotPassword}>
+               <div className="mb-4 pb-2">
+                  <label className="custom-field one">
+                  <input type="text" name="verifyemail" value={formValues.verifyeamil} onChange={handleChange} />
+                  <span className="placeholder">  Email Address</span>
+                  <i className="ti ti-mail"/>
+                  </label>
+               </div>
+               <div> <button className="btn full-btn hvr-sweep-to-right">Reset Password</button></div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+      {/* <!-- password-link-sent --> */}
+      {/* <div className="modal fade common-modal" id="password-link-sent" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div className="modal-dialog">
+      <div className="modal-content">
+         <div className="modal-head text-center">
+            <figure><img src="images/logo-form.png"></figure>
+            <h5 className="modal-title" id="exampleModalLabel">Password Link Sent</h5>
+            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="ti ti-x"></i></button>
+         </div>
+         <div className="modal-body">
+            <div className=""> <button className="btn full-btn hvr-sweep-to-right">ok</button></div>
+         </div>
+      </div>
+   </div>
+</div> */}
     </>
   );
 };

@@ -1,5 +1,5 @@
 body {
-  background: url(/public/assets/images/bg-banner.png);
+  background: url(../../assets/images/bg-banner.png);
   background-attachment: fixed;
   background-position: center center;
   position: relative;
