@@ -11,10 +11,11 @@ function App() {
     <>
       <Navbar />
         <Routes>
-          <Route index path="/" element={<Login />} />
+          <Route index path="/" element={<ResetPassword />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/home" element={<Home />} />
+          <Route exact path="/verification-complete/:token_id" element={<ResetPassword />} />
           <Route exact path='/reset-password' element={<ResetPassword/>} />
         </Routes>
       <Footer />

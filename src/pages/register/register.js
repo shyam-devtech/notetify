@@ -92,7 +92,7 @@ const Register = () => {
       errors.city = "State name is required!";
     }
     if (!value.state) {
-      errors.city = "City name is required!";
+      errors.state = "City name is required!";
     }
     if (!value.zipcode) {
       errors.zipcode = "Zipcode is required!!";
@@ -124,17 +124,20 @@ const Register = () => {
       };
       makePostRequest("/schoolAdminAccess/addSchoolAdmin", data)
         .then((res) => {
+          console.log(res.data);
           if (res.status === 200) {
             console.log(res.data);
-            navigate("/login");
+            // navigate("/login");
           }
         })
         .catch((err) => {
-          console.log(err.res.message);
+          console.log(err.message);
         });
     }
     setIsValid(true);
   };
+
+  console.log(formValues.state);
 
   return (
     <>
@@ -150,7 +153,7 @@ const Register = () => {
                   <form onSubmit={(e) => handleSubmit(e)}>
                     <div className="mb-4">
                       <label className="custom-field one">
-                        <input type="text" name="firstname" value={formValues.firstname} onChange={handleChange} />
+                        <input type="name" name="firstname" value={formValues.firstname} onChange={handleChange} />
                         <span className="placeholder">First Name *</span>
                         <i className="ti ti-user"></i>
                         <span className="text-danger">{formErrors.firstname ? formErrors.firstname : null}</span>
@@ -158,7 +161,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                       <label className="custom-field one">
-                        <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
+                        <input type="name" name="lastname" value={formValues.lastname} onChange={handleChange} />
                         <span className="placeholder">Last Name *</span>
                         <i className="ti ti-user"></i>
                         <span className="text-danger">{formErrors.lastname ? formErrors.lastname : null}</span>
@@ -166,7 +169,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                       <label className="custom-field one">
-                        <input type="text" name="email" value={formValues.email} onChange={handleChange} />
+                        <input type="email" name="email" value={formValues.email} onChange={handleChange} />
                         <span className="placeholder">Email *</span>
                         <i className="ti ti-mail"></i>
                         <span className="text-danger">{formErrors.email ? formErrors.email : null}</span>
@@ -174,7 +177,7 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                       <label className="custom-field one">
-                        <input type="text" name="phoneno" value={formValues.phoneno} onChange={handleChange} />
+                        <input type="phone" name="phoneno" value={formValues.phoneno} onChange={handleChange} />
                         <span className="placeholder">Mobile Number*</span>
                         <i className="ti ti-phone"></i>
                         <span className="text-danger">{formErrors.phoneno ? formErrors.phoneno : null}</span>
@@ -223,14 +226,14 @@ const Register = () => {
                     <div className="mb-4">
                       <label className="custom-field one">
                       <i className="ti ti-map-pin"></i>
-                      <select className="form-control" name="state" onChange={handleChange}  >
+                      <select className="form-control" name="state" value={formValues.state} onChange={handleChange}  >
                         <option >Choose a state:</option>
-                        <option value={formValues.state} >Rajasthan*</option>
-                        <option value={formValues.state} >Maharashtra*</option>
-                        <option value={formValues.state} >UP*</option>
-                        <option value={formValues.state} >West Bengal*</option>
-                        <option value={formValues.state} >Tamil Nadu*</option>
-                        <option value={formValues.state} >Telangana*</option>
+                        <option  >Rajasthan*</option>
+                        <option >Maharashtra*</option>s
+                        <option >UP*</option>
+                        <option >West Bengal*</option>
+                        <option >Tamil Nadu*</option>
+                        <option >Telangana*</option>
                       </select>
                       </label>
                       <span className="text-danger">{formErrors.state ? formErrors.state : null}</span>
@@ -267,8 +270,8 @@ const Register = () => {
                       <button
                         type="submit"
                         className="btn full-btn hvr-sweep-to-right"
-                        // data-bs-toggle="modal"
-                        // data-bs-target="#email-verification"
+                        data-bs-toggle="modal"
+                        data-bs-target="#email-verification"
                       >
                         Register
                       </button>
@@ -321,7 +324,7 @@ const Register = () => {
               </div>
               <div className="mt-4">
                 {" "}
-                <button className="btn full-btn hvr-sweep-to-right">
+                <button onClick={handleSubmit} className="btn full-btn hvr-sweep-to-right">
                   Resend Link
                 </button>
               </div>

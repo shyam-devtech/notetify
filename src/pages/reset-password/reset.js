@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { makePostRequest } from "../../utils";
 
 
 const ResetPassword = () => {
 
+  const {token_id} = useParams()
+  console.log(token_id);
+
     let initialValues = {
         newpassword: " ", 
+        confirmpassword: " ", 
     } 
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
@@ -23,7 +27,7 @@ const ResetPassword = () => {
         if(!value.newpassword){
             errors.newpassword = "Password is required";
         }
-        if(!value.confirmpassword){
+        if(!value.confirmpassword === !value.password){
             errors.confirmpassword = "Password is required";
         }
     }
@@ -33,10 +37,10 @@ const ResetPassword = () => {
         setIsValid(setFormErrors(validate(formValues)));
 
         if (isValid === true) {
+          console.log(token_id, "token_id")
         let data = {
-          "token_id": localStorage.getItem('token_id'),
-          "newpassword": formValues.newpassword,
-          "confirmpassword": formValues.confirmpassword,
+          "token_id": token_id,
+          "password": formValues.newpassword,
         };
 
         makePostRequest("/schoolAdminAccess/resetpassword", data)
@@ -79,16 +83,16 @@ const ResetPassword = () => {
                       <span className="placeholder">Password</span>
                       <i className="ti ti-lock"></i>
                       <i className="ti ti-eye"></i>
-                      <span className="text-danger">{formErrors.password ? formErrors.password : null}</span>
+                      <span className="text-danger">{formErrors.newpassword ? formErrors.newpassword : null}</span>
                     </label>
                   </div>
                   <div className="mb-4 v">
                     <label className="custom-field one">
                       <input type="text" placeholder=" " />
-                      <span className="placeholder" name="password" value={formValues.password} onChange={handleChange}>Confirm Password</span>
+                      <span className="placeholder" name="password" value={formValues.confirmnewpassword} onChange={handleChange}>Confirm Password</span>
                       <i className="ti ti-lock"></i>
                       <i className="ti ti-eye"></i>
-                      <span className="text-danger">{formErrors.password ? formErrors.password : null}</span>
+                      <span className="text-danger">{formErrors.confirmpassword ? formErrors.confirmpassword : null}</span>
                     </label>
                   </div>
                   <div className="mt-5 ">

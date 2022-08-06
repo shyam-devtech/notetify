@@ -47,15 +47,18 @@ const Login = () => {
   const handleValidation = (value) => {
     const errors = {};
     const regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
+    
     if (!value.email) {
       errors.email = "Email is required!";
-    } else if(!regex.test(value.email)){
-      errors.email = "Please enter a valid formate!"
+    } else if (!regex.test(value.email)) {
+      errors.email = "This is not a valid email format!";
     }
     if (!value.password) {
       errors.password = "Password is required!";
     }
+
     return errors;
+
   };
 
   /*------------------------------*/
@@ -94,7 +97,6 @@ const Login = () => {
   const handleForgotPassword = (e) => {
     e.preventDefault();
     setIsValid(setFormErrors(handleValidation(formValues)));
-  console.log(formErrors.email);
 
     if (isValid === true) {
       let data = {
@@ -114,7 +116,7 @@ const Login = () => {
     setIsValid(true);
   }
 
-  console.log(formErrors.email);
+  // console.log(formErrors.email);
 
   return (
     <>
@@ -217,26 +219,26 @@ const Login = () => {
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="ti ti-x"></i></button>
          </div>
          <div className="modal-body">
-            <form onSubmit={handleForgotPassword}>
+            <form onSubmit={(e) => handleForgotPassword(e)}>
                <div className="mb-4 pb-2">
                   <label className="custom-field one">
-                  <input type="text" name="verifyemail" value={formValues.verifyeamil} onChange={handleChange} />
+                  <input type="text" name="verifyemail" value={formValues.verifyemail} onChange={handleChange} />
                   <span className="placeholder">  Email Address</span>
                   <i className="ti ti-mail"/>
                   </label>
                </div>
-               <div> <button className="btn full-btn hvr-sweep-to-right">Reset Password</button></div>
+               <div> <button type="submit" className="btn full-btn hvr-sweep-to-right">Reset Password</button></div>
             </form>
          </div>
       </div>
    </div>
 </div>
       {/* <!-- password-link-sent --> */}
-      {/* <div className="modal fade common-modal" id="password-link-sent" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade common-modal" id="password-link-sent" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
    <div className="modal-dialog">
       <div className="modal-content">
          <div className="modal-head text-center">
-            <figure><img src="images/logo-form.png"></figure>
+            <figure><img src={require("../../assets/images/logo-form.png")}/></figure>
             <h5 className="modal-title" id="exampleModalLabel">Password Link Sent</h5>
             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"><i className="ti ti-x"></i></button>
          </div>
@@ -245,7 +247,7 @@ const Login = () => {
          </div>
       </div>
    </div>
-</div> */}
+</div>
     </>
   );
 };
